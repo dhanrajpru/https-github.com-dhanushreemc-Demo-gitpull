@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<title>Redemption</title>
+<body>
+	<div class="container-fluid text-center">
+		<div class="form-group text-left">
+			<div class="col-sm-8  border_cus col-sm-offset-2 ">
+				<div class="form-group margin_top_pro_2 col-xs-12 col-sm-12">
+					<div class="col-xs-12 col-sm-12">
+						<div class="col-xs-12 col-sm-12">
+							<label class="f18">
+								<strong>Product Catalog </strong>
+							</label>
+						</div>
+					</div>
+				</div>
+				<div class="form-group  col-xs-12 col-sm-12 ">
+					<div *ngFor="let product of products" class="form-group f12 marbtmten col-xs-12 col-sm-4">
+						<div class="col-sm-12">
+							<!-- <a href="{{hostname}}/productdescription/{{ product.productId }}">
+								<img src="assets/images/proficon.png" alt="Profile icon" style="width:100%">
+							</a> -->
+							<a href="">
+								<img src="assets/images/proficon.png" alt="Profile icon" style="width:100%">
+							</a>
+						</div>
+						<div class="col-sm-6 acsetmar col-xs-6">
+							<label class="f12">{{ product.productName }}</label>
+						</div>
+						<div class="col-sm-6 acsetmar col-xs-6 text-right">
+							<label class="f12">{{ product.unitPrice.$numberDecimal }}/{{ product.unitOfMeasure }}</label>
+						</div>
+						<div class="col-sm-12 col-xs-12 f12">
+							<a style="text-decoration:none;" class="btn btn-info btn-md center-block" href="{{hostname}}#/cartReview">ADD TO CART</a>
+						</div>
+					</div>
+				</div>
+				<!-- <pagination-controls  id="some_id"
+                      (pageChange)="pageChanged($event)"
+                      maxSize="9"
+                      directionLinks="true"
+                      autoHide="true"
+                      previousLabel="Previous"
+                      nextLabel="Next"
+                      screenReaderPaginationLabel="Pagination"
+                      screenReaderPageLabel="page"
+                      screenReaderCurrentLabel="You're on page">
+				</pagination-controls> -->
+			</div>
+		</div>
+	</div>
+</body>

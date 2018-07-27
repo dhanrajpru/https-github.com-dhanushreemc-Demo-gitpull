@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<title>ZervPlatform</title>
+
+<body>
+  <form [formGroup]="mfaChooseMethod">
+    <div class="container-fluid">
+      <div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 border_cus_login" style="margin-top:5%;">
+        <div class="form-group col-sm-10 pad_top_birth col-sm-offset-1">
+          <div class="col-sm-12">
+            <h3>Choose how you want to receive your temporary code</h3>
+          </div>
+          <div class="col-sm-12 pad_top2">
+            <h5>Please, let us know how you would like to receive your temporary identification code</h5>
+          </div>
+          <div class="col-sm-12 pad_top2">
+            <a>If you received a code within the last 2 minutes, please click here to enter your code.</a>
+          </div>
+        </div>
+        <div class=" form-group col-sm-10 col-sm-offset-1 pad_top70">
+          <div class="col-sm-8">
+            <div class="col-sm-12 text_color">
+              <h4>By phone</h4>
+            </div>
+            <div class="col-sm-5 text_color">
+              <label>xxx-xxx-1234</label>
+            </div>
+            <div class="col-sm-3 radio-inline text_color">
+              <input name="phone" value="text" id="textChoose" type="radio" formControlName="phone" onclick="this.checked = false;">
+              <label class="radio_textHoriz">Text</label>
+            </div>
+            <div class="radio-inline text_color">
+              <input id="callChoose" name="phone" value="call" type="radio" formControlName="phone" onclick="this.checked = false;">
+              <label class="radio_textHoriz">Call</label>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="col-sm-12">
+              <h4>By email</h4>
+            </div>
+            <div class="col-sm-12 radio-inline">
+              <input type="radio" value="emailID" name="phone" formControlName="phone" id="emailChoose">
+              <label class="radio_textHoriz">j...e@gmail.com</label>
+            </div>
+          </div>
+        </div>
+        <div class="form-group col-xs-12 col-sm-10 col-sm-offset-1 pad_top_birth nolrpad">
+          <div class="form-group col-xs-6 col-sm-3">
+            <a type="button" style="width:100%" id="mfaChooseMethodCancel" class="btn btn-default btn-md center-block">Cancel</a>
+          </div>
+          <div class="form-group col-xs-6 col-sm-3 col-sm-offset-6">
+            <input type="submit" name="send" style="width:100%" id="mfaChooseMethodSendCode" class="btn btn-info btn-md center-block"
+              value="Send Code" [disabled]="mfaChooseMethod.invalid" routerLink="/mFAEnterCodeEmail">
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</body>

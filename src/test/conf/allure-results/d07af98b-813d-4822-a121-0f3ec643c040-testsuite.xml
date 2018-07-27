@@ -1,0 +1,118 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1527856427944' stop='1527856570332'>
+    <name>lOGIN TEST SCENARIO </name>
+    <title>lOGIN TEST SCENARIO </title>
+    <test-cases>
+        <test-case start='1527856427946' status='passed' stop='1527856450744'>
+            <name>this should fail due to user name not entered</name>
+            <title>this should fail due to user name not entered</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1527856450744' status='passed' stop='1527856458108'>
+            <name>this should fail due to password not entered</name>
+            <title>this should fail due to password not entered</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1527856458108' status='passed' stop='1527856468334'>
+            <name>this should fail due to user name and password formate incorrrect</name>
+            <title>this should fail due to user name and password formate incorrrect</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1527856468334' status='passed' stop='1527856482240'>
+            <name>this should fail due to user name and password formate is in number</name>
+            <title>this should fail due to user name and password formate is in number</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1527856482240' status='passed' stop='1527856496551'>
+            <name>this should fail due to user name and password formate is in special char</name>
+            <title>this should fail due to user name and password formate is in special char</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1527856496551' status='failed' stop='1527856508683'>
+            <name>This should be able to login</name>
+            <title>This should be able to login</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Expected 'http://34.213.38.204:4010/login' to match 'http://34.213.38.204:4010/accountpage'.</message>
+                <stack-trace>Error: Failed expectation
+                    at UserContext.&lt;anonymous> (/home/raj/Redemption_ui_repo/CR-Redemption-UI/src/test/test/zerv_platform_test_conf.js:51:41)
+                    at /usr/lib/node_modules/protractor/node_modules/jasminewd2/index.js:112:25
+                    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+                    at ControlFlow.promise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+                    at schedulerExecute (/usr/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+                    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+                    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+                    at asyncRun (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+                    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:668:7</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1527856508683' status='passed' stop='1527856531914'>
+            <name>This should perform the action to navigate for creation of account</name>
+            <title>This should perform the action to navigate for creation of account</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1527856531915' status='failed' stop='1527856557433'>
+            <name>This should perform the action to navigate for Help page</name>
+            <title>This should perform the action to navigate for Help page</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Expected 'http://34.213.38.204:4010/login' to match 'http://34.213.38.204:4010/help'.</message>
+                <stack-trace>Error: Failed expectation
+                    at UserContext.&lt;anonymous> (/home/raj/Redemption_ui_repo/CR-Redemption-UI/src/test/test/zerv_platform_test_conf.js:59:41)
+                    at /usr/lib/node_modules/protractor/node_modules/jasminewd2/index.js:112:25
+                    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+                    at ControlFlow.promise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+                    at schedulerExecute (/usr/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+                    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+                    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+                    at asyncRun (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+                    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:668:7</stack-trace>
+            </failure>
+        </test-case>
+        <test-case start='1527856557433' status='failed' stop='1527856570329'>
+            <name>This should perform the action to navigate for Forgot Password</name>
+            <title>This should perform the action to navigate for Forgot Password</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Expected 'http://34.213.38.204:4010/forgotPassword' to match 'http://34.213.38.204:4010/forgetpassword'.</message>
+                <stack-trace>Error: Failed expectation
+                    at UserContext.&lt;anonymous> (/home/raj/Redemption_ui_repo/CR-Redemption-UI/src/test/test/zerv_platform_test_conf.js:63:41)
+                    at /usr/lib/node_modules/protractor/node_modules/jasminewd2/index.js:112:25
+                    at new ManagedPromise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:1077:7)
+                    at ControlFlow.promise (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2505:12)
+                    at schedulerExecute (/usr/lib/node_modules/protractor/node_modules/jasminewd2/index.js:95:18)
+                    at TaskQueue.execute_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3084:14)
+                    at TaskQueue.executeNext_ (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:3067:27)
+                    at asyncRun (/usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:2974:25)
+                    at /usr/lib/node_modules/protractor/node_modules/selenium-webdriver/lib/promise.js:668:7</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

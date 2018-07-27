@@ -1,0 +1,49 @@
+<form [formGroup]="dialog" (submit)="createAccount()">
+  <div>
+    <button mat-dialog-close="" type="button" class="close">&times; </button>
+  </div>
+  <div style="text-align: center">
+    <h3 mat-dialog-title>Confirm your eligibility for restricted products</h3>
+    <hr>
+  </div>
+  <br>
+  <mat-dialog-content>
+    <p class="f16">
+      In order to proceed you have to: </p>
+    <ul>
+      <li class="pad_bottom_rest_terms">
+        Are you within the USA (excluding Hawaii and Alaska)?
+      </li>
+      <li class="pad_bottom_rest_terms">
+        Are you compliant in your local jurisdiction to receive this product?
+      </li>
+      <li class="pad_bottom_rest_terms">
+        Are you compliant in your state jurisdiction to receive this product?
+      </li>
+      <li class="pad_bottom_rest_terms">
+        Are you compliant in your national jurisdiction to receive this product?
+      </li>
+      <li class="pad_bottom_rest_terms">
+        Are you of minimum age to receive the products at the location/jurisdiction specified by you?
+      </li>
+      <p class="pad_top" style="padding-left: 100px">
+        <label class="checkbox-inline">
+          <input type="checkbox" (change)="termsAgreement()" id="termsAndAgreement" name="accept" formControlName="accept">I accept the
+          <a href="{{hostname}}#/">privacy agreement</a>
+        </label>
+      </p>
+    </ul>
+  </mat-dialog-content>
+  <br>
+  <mat-dialog-actions>
+    <div class=" form-group col-xs-12 col-sm-12">
+      <div class="col-sm-4 col-xs-6">
+        <button [mat-dialog-close]="true" id="term_can" class="btn btn-default btn-md btn-block ">DECLINE</button>
+      </div>
+      <div class="col-sm-4 col-xs-6 col-sm-offset-4">
+        <button type="submit" style="width:100%" id="agreeTer" value="AGREE" class="btn btn-info btn-md center-block" [mat-dialog-close]="true"
+          [disabled]="(agreeDisabled)">AGREE</button>
+      </div>
+    </div>
+  </mat-dialog-actions>
+</form>

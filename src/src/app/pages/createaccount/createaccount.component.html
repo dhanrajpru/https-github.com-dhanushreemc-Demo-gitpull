@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<title>ZervPlatform</title>
+
+<body>
+	<form [formGroup]="accountCreate" (ngSubmit)="save()">
+		<div class="container-fluid text-center ">
+			<div class="form-group text-left">
+				<div class="col-sm-10 col-sm-offset-1 ">
+					<div class="form-group col-xs-12 col-sm-8 col-sm-offset-2 border_cus_login" style="margin-top:6%;">
+						<div class="form-group text-center  col-xs-12 col-sm-12">
+							<h3 class="pad_res_hd">
+								<strong>CREATE ACCOUNT</strong>
+							</h3>
+							<br/>
+						</div>
+						<div class="col-xs-12 col-sm-12">
+							<div class="col-sm-10 col-sm-offset-1">
+								<div class="col-sm-12 ">
+									<div class="col-sm-12">
+										<div class="col-sm-3 txt_res pad_res_temp__left">
+											<label class="pad_top2 ">Email address</label>
+										</div>
+										<div class="col-sm-7 col-xs-11 ">
+											<div class="input-group form-group">
+												<span class="input-group-addon">
+													<i class="	fa fa-envelope-o"></i>
+												</span>
+												<input id="email" type="email" formControlName="email" class="form-control" name="values.email" placeholder="Email">
+											</div>
+											<div *ngIf="accountCreate.get('email').touched || accountCreate.get('email').dirty" class="err_style">
+												<div *ngIf="accountCreate.hasError('required',['email'])" class="padd">Cannot be blank</div>
+											</div>
+											<div *ngIf="accountCreate.get('email').touched || accountCreate.get('email').dirty" class="err_style">
+												<div *ngIf="accountCreate.hasError('pattern',['email'])">Invalid E-mail ID</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-12">
+										<div class="col-sm-3 txt_res pad_res_temp__left">
+											<label class="pad_top2 ">Phone number</label>
+										</div>
+										<div class="col-sm-3 col-xs-11 ">
+											<div class="input-group form-group">
+												<span class="input-group-addon">
+													<i class="fa fa-phone"></i>
+												</span>
+												<select class="form-control" #t (change)="countryCodeSelect(t.value)" formControlName="phCountryCode" id="phCountryCode"
+												 name="phCountryCode">
+													<option *ngFor="let item of countryCode; let i = index" value="{{ i }}">{{ item.name }}</option>
+												</select>
+											</div>
+										</div>
+										<div class="col-sm-4 col-xs-11 paddingleft2">
+											<div class="form-group">
+												<input class="form-control" id="phNumber" type="phonenumber" formControlName="phNumber" name="phNumber" placeholder="phonenumber"
+												 maxlength="13">
+											</div>
+											<div *ngIf="accountCreate.get('phNumber').touched || accountCreate.get('phNumber').dirty" class="err_style">
+												<div *ngIf="accountCreate.hasError('required',['phNumber'])" class="padd">Cannot be blank</div>
+											</div>
+											<div *ngIf="accountCreate.get('phNumber').touched || accountCreate.get('phNumber').dirty" class="err_style">
+												<div *ngIf="accountCreate.hasError('pattern',['phNumber'])">Invalid Number</div>
+											</div>
+										</div>
+									</div>
+
+									<div class="col-sm-12">
+										<div class="col-sm-3 col-xs-12 txt_res">
+											<label class="pad_top2 ">Username</label>
+										</div>
+										<div class="col-sm-7 col-xs-11 ">
+											<div class="input-group form-group">
+												<span class="input-group-addon">
+													<i class="fa fa-user"></i>
+												</span>
+												<input id="user" type="text" formControlName="userName" class="form-control" name="userName" placeholder="Username">
+
+											</div>
+											<div *ngIf="accountCreate.get('userName').touched || accountCreate.get('userName').dirty">
+												<div class="err_style" *ngIf="accountCreate.hasError('required',['userName'])">Cannot be blank.</div>
+											</div>
+
+											<!-- <span class="err_style" *ngshow="accountCreate.username.$error.required && accountCreate.username.$dirty">username is required.</span>
+											<span class="err_style" *ngif="accountCreate.username.$error.minlength && !accountCreate.username.$error.required">username is too short.</span>
+											<span class="err_style" *ngshow="accountCreate.username.$error.maxlength">username is too long.</span>  -->
+										</div>
+										<!-- <div class="form-group col-sm-4">
+										<input type="text" ng-required="true" ng-model="phonenumber" numbers-Only class="form-control" name="phonenumber" readonly>
+									    </div> -->
+									</div>
+									<div class="col-sm-12">
+										<div class="col-sm-3 txt_res">
+											<label class="pad_top2">Password</label>
+										</div>
+										<div class="col-sm-7 col-xs-11 ">
+											<div class="input-group form-group">
+												<span class="input-group-addon">
+													<i class="fa fa-lock"></i>
+												</span>
+												<input type="password" [type]="hide ? 'text' : 'password'" (change)="strength()" placeholder="Password" id="password" (keyup)="strength()"
+												 formControlName="password" class="form-control">
+											</div>
+										</div>
+										<mat-icon class="col-sm-1 top-pad-seltype toggle-password" matSuffix (click)="hide =! hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+										<div class="col-sm-7 col-xs-11 col-sm-offset-3">
+											<div class="progress">
+												<div class="progress-bar progress-bar-striped {{progressBarLength}}" role="progressbar" aria-valuenow="50" aria-valuemin="0"
+												 aria-valuemax="100">
+												</div>
+											</div>
+
+											<span *ngIf="accountCreate.get('password').touched">
+												<span class="err_style" *ngIf="accountCreate.hasError('required',['password'])">Cannot be blank.</span>
+											</span>
+											<span *ngIf="accountCreate.get('password').touched">
+												<span class="err_style" *ngIf="accountCreate.hasError('pattern',['password'])">Password must be atleast seven characters long and it must be a combination of letters(uppercase & lowercase),numbers,
+													and symbols.
+												</span>
+											</span>
+											<!-- <span class="err_style" ng-show="accountCreate.pass.$dirty && accountCreate.pass.$error.required">Password is required.</span>
+												<span class="err_style justify_txt" ng-if="!(values.accInfoPassword.length>7) && accountCreate.pass.$dirty && !accountCreate.pass.$error.required">
+													<div>Password must be atleast seven characters long and it must be a combination of letters(uppercase & lowercase), numbers, and symbols.</div>
+												</span> -->
+										</div>
+									</div>
+
+									<div class="col-sm-12">
+										<div class="col-sm-3  txt_res">
+											<label class="pad_top2">Confirm password</label>
+										</div>
+										<div class="col-sm-7 col-xs-11 ">
+											<div class="input-group form-group">
+												<span class="input-group-addon">
+													<i class="fa fa-lock"></i>
+												</span>
+												<input type="password" name="ConfirmPassword" id="ConfirmPassword" formControlName="ConfirmPassword" (keyup)="passwordMatch()"
+												 placeholder="Password" advs-compare="password" class="form-control {{errMessageStyle1}}">
+
+											</div>
+											<span class="{{errMessageStyle1}}"></span>
+											<span class="err_style"> {{ passwordMatchMessage }}</span>
+											<!-- <span *ngIf="accountCreate.get('ConfirmPassword').touched">
+												<span class="err_style" *ngIf="accountCreate.hasError('pattern',['ConfirmPassword'])">Password did not match.</span>
+											</span> -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-sm-12">
+							<br/>
+							<div class="col-sm-12 text-center">
+								<div class=" form-group col-xs-7 col-xs-offset-2 col-sm-7  col-sm-offset-3">
+									<input type="submit" class="btn btn-block text-center f15  btn-info btn-md center-block" [disabled]="accountCreate.invalid"
+									 id="accInfoNext" value="Next" (click)="next()" routerLink="/login">
+								</div>
+								<div class="form-group text-center col-xs-12 col-sm-9 col-sm-offset-2 padding-left">
+									<label>Having trouble logging in?
+										<a id="help" href="{{hostname}}#/help"> Click here</a> for help</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</form>
+</body>

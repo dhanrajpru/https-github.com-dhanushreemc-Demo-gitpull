@@ -1,0 +1,250 @@
+<body>
+  <div class="container-fluid text-center ">
+    <div class="form-group col-xs-12 col-sm-12">
+      <div class="from-group col-xs-12 col-sm-8 col-sm-offset-2">
+        <ol class="progress1 progress1--large">
+          <li class="is-complete" data-step="1">
+            Personal information
+          </li>
+          <li class="is-complete" data-step="2">
+            Wallet
+          </li>
+          <li class="is-active" data-step="3">
+            Overview
+          </li>
+        </ol>
+      </div>
+    </div>
+    <div class="form-group text-left">
+      <div class="col-sm-6 col-sm-offset-3 border_cus ">
+        <div class="form-group pad_left200 col-xs-12 margin_top_pro col-sm-11 col-sm-offset-1">
+          <label class="f20">
+            <strong>Overview</strong>
+          </label>
+        </div>
+        <div class="form-group form-horizontal  col-xs-12 col-sm-12">
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12 col-xs-12">
+              <div class="col-sm-3 text_res col-xs-12">
+                <label class="control-label">Username</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.username }}</label>
+              </div>
+              <div class="col-sm-2  col-xs-12 ">
+                <a routerLink="/accountcreationpersonal" id="accOverEditTwo" class="control-label f14">Edit</a>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">First Name</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.firstName }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Last Name</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.lastName }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Date of Birth</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.birthDay ? ( accInfo.birthDay  + '/' + accInfo.birthMonth +'/'+ accInfo.birthYear) : ''}}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Email</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.emailAddress }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Phone number</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.phoneNumber }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Address Line 1</label>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.address1 }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Address Line 2</label>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.address2 }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Country</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.country }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Zip</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.zipCode }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">City</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.city }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">State</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.state }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="">
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <hr>
+              <div class="col-sm-12 text-center">
+                <label class="control-label">Shipping Address</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Address Line 1</label>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.sAddressOne }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Address Line 2</label>
+              </div>
+              <div class="col-sm-9 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.sAddressTwo }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Country</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.countryTwo }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">Zip</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.zipCodeTwo }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">City</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.cityTwo }}</label>
+              </div>
+            </div>
+          </div>
+          <div class="form-group  col-xs-12 col-sm-12 ">
+            <div class="col-sm-12">
+              <div class="col-sm-3 text_res">
+                <label class="control-label">State</label>
+              </div>
+              <div class="col-sm-7 col-xs-12">
+                <label class="control-label normal-font-weight">{{ accInfo.stateTwo }}</label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 border_cus pad_top70 form-group text-left">
+      <div class="form-group  col-xs-12 col-sm-12 ">
+        <div class="col-sm-12 col-xs-12">
+          <div class="col-sm-3 text_res col-xs-12">
+            <label class="control-label">Public key address</label>
+          </div>
+          <div class="col-sm-7 col-xs-12" style="text-align: left;">
+            <span>{{ accInfo.walletAddress }}</span>
+          </div>
+          <div class="col-sm-1 col-xs-12 ">
+            <a routerLink="/accountcreationwallet" id="overViEditOne" class="control-label f14">Edit</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-6 col-sm-offset-3 form-group text-left pad_top70">
+      <div>
+        <div class=" form-group col-xs-12 col-sm-12">
+          <div class="col-sm-4 col-xs-6">
+            <a style="text-decoration:none;" id="term_cancel" class="btn btn-default btn-md center-block" (click)="back()">BACK</a>
+          </div>
+          <div class="col-sm-4 col-xs-6 col-sm-offset-4">
+            <button style="width:100%" id="agreeTerms" class="btn btn-info btn-md center-block" (click)="openDialog()">CREATE ACCOUNT</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>

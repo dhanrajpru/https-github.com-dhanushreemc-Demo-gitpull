@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<title>Redemption</title>
+
+<body>
+	<form>
+		<div class="container-fluid text-center">
+			<div class="form-group text-left">
+				<div class="col-sm-12">
+					<a href="{{hostname}}#/products" id="ReturnToCatalog">Return to Catalog</a>
+				</div>
+				<div class="col-sm-8 border_cus col-sm-offset-2 margin_top_pro">
+					<div class="form-group  col-xs-12 col-sm-12">
+						<div class="col-sm-5 col-sm-offset-1">
+							<div class=" form-group col-sm-11 no-padding  margin_top_pro_2">
+								<div class="form-group col-sm-12 col-xs-12">
+									<img src="assets/images/proficon.png" alt="Profile icon" style="width:100%">
+								</div>
+								<div class="form-group col-sm-4 col-xs-4">
+									<img src="assets/images/proficon.png" alt="Profile icon" style="width:100%">
+								</div>
+								<div class="form-group col-sm-4 col-xs-4">
+									<img src="assets/images/proficon.png" alt="Profile icon" style="width:100%">
+								</div>
+								<div class="form-group col-sm-4 col-xs-4">
+									<img src="assets/images/proficon.png" alt="Profile icon" style="width:100%">
+								</div>
+							</div>
+						</div>
+						<div class=" form-group col-sm-6 margin_top_pro_2">
+							<div class="col-sm-12 f16 col-xs-12">
+								<div class="form-group col-xs-12 col-sm-8 ">
+									<label class="f20">
+										<strong>Product X</strong>
+									</label>
+								</div>
+								<div class="col-xs-12 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Reserve (vendor) Code</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{vendorCode}}</label>
+								</div>
+								<div class="col-xs-12 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Minimum Order Quantity </label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{minimumOrderQuantity}}</label>
+								</div>
+								<div class="col-xs-12 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Maximum Order Quantity </label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{maximumOrderQuantity}}</label>
+								</div>
+								<div class="form-group col-xs-12 col-sm-11 margin_top_pro">
+									<div class="col-xs-12 col-sm-5 " style="padding-left:0px">
+										<input class="form-control" autocomplete="off" name="quantity" id="proDescText" type="text">
+									</div>
+									<div class="col-xs-12 col-sm-7 no-padding">
+										<select class="form-control" id="proUnit">
+											<option>{{ unitOfMeasure }}</option>
+										</select>
+									</div>
+								</div>
+								<br/>
+								<div class=" form-group col-xs-12 col-sm-11 marbtmten">
+									<a class="btn btn-info btn-block text-center" id="proAddToCart">ADD TO CART</a>
+								</div>
+								<div class="form-group  col-xs-12 col-sm-11 margin_top_pro">
+									<label class="f16 mar_bottom">DIMENSIONS</label>
+									<hr width="100%" style="margin-top: 0px;margin-bottom: 0px;border: 0;border-top: 1px solid #eee;">
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Weight</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{weight}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Individual Package Length</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{individualPkgLength}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Individual Package Length</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{individualPkgWidth}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Individual Package Width</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{individualPkgHeight}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Pallet Length</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{palletLength}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Pallet Width</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{palletWidth}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Pallet Height</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{palletHeight}}</label>
+								</div>
+								<div class="form-group  col-xs-12 col-sm-11 margin_top_pro">
+									<label class="f16 mar_bottom"> RESTRICTIONS</label>
+									<hr class="col-sm-7 btn-block" style="margin-top: 0px;margin-bottom: 0px;border: 0;border-top: 1px solid #eee;">
+								</div>
+								<div class="col-xs-12 f14 col-sm-11 no-padding">
+									<label class="mar_bottom col-sm-9">Age Restricted?</label>
+									<label class="mar_bottom col-sm-3 no-padding">:{{ageRestriction}}</label>
+								</div>
+								<div class="col-xs-12 f14 col-sm-11">
+									<label class="mar_bottom col-sm-9 no-padding">Geographically Restricted Location?</label>
+									<label class="mar_bottom col-sm-3 geo_pad">:{{geoRestrictionFlag}}</label>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>

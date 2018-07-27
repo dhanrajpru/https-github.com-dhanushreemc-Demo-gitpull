@@ -1,0 +1,113 @@
+{ 
+  "loginLink": "http://34.213.38.204:4010/login",
+  "helpLink" : "http://34.213.38.204:4010/help",
+  "accountPageLink" : "http://34.213.38.204:4010/accountpage",
+  "accountcreationpersonalLink" : "http://34.213.38.204:4010/accountcreationpersonal",
+  "accountcreationwalletLink" : "http://34.213.38.204:4010/accountcreationwallet",
+  "accountcreationoverviewLink" : "http://34.213.38.204:4010/accountcreationoverview",
+  "forgetpasswordLink" : "http://34.213.38.204:4010/forgotPassword",
+  "mFAChooseMethodlink" : "http://34.213.38.204:4010/mFAChooseMethod",
+  "callOrTextMFARequestLink" : "http://34.213.38.204:4010/callOrTextMFARequest",
+  "CallOrTextMFARequestTextLink" : "http://34.213.38.204:4010/CallOrTextMFARequestText",
+  "CallOrTextMFARequestCallLink" : "http://34.213.38.204:4010/CallOrTextMFARequestCall",
+  "mFAEnterCodeEmailLink" : "http://34.213.38.204:4010/mFAEnterCodeEmail",
+  "productcatalogLink" : "http://34.213.38.204:4010/productcatalog",
+  "accountpage" : {
+	"truetest" : {
+		"accPageId" : "542"
+	},
+	"falsetest" : {
+		"accPageId" : "qdnjnd"
+	}
+  },
+  "wallet" : {
+  "zervAddress" : "JKSLRJ11223454FJ"
+  },
+   "mfaemail" : {
+	"falsetest" : {
+		"temIdCode" : "!@###$$&hcdhjcbf1234454"
+	},
+	"truetest" : {
+		"temIdCode" : "12345",
+		"pass": "!@#$1234QWER"
+	}
+  },
+  "mfatext" : {
+	"falsetest" : {
+		"temIdCode" : "!@###$$&hcdhjcbf1234454"
+	},
+	"truetest" : {
+		"temIdCode" : "012326"
+	}
+  },
+  "mfacall" : {
+    "falsetest" : {
+		"tempIdCall" : "hcdhjcbf1234454333!@#$"
+	},
+	"truetest" : {
+		"tempIdCall" : "101022"
+	}
+  },
+   "loginDetails" : {
+		"falsetest" : {
+			"username" : "johnpaul.pp33#gmail.com",
+			"usernamenumber" : "123456789",
+			"usernamespl" : "!@#$%^&",
+			"password" : "abcdka",
+			"passwordnumber" : "123456789",
+			"passwordspl":"!@#$%!@#$"
+		},
+		"truetest": {
+			"username" : "johnpaul12",
+			"password" : "Pinto@1234"
+		}
+   },
+    "accountcreationpersonal" : {
+		"falsetest" : {
+			"username" : "t12323432",
+			"password" : "abcd1234!@#$",
+			"firstName" : "!@#$%",
+			"lastname" : "1234",
+			"day" : "36",
+			"month" : "14",
+			"year" : "0000",
+			"email" : "pinto#gmail.com",
+			"countrycode" : "+71",
+			"areacode" : "000000054125",
+			"number" : "123456789452",
+			"perAddOne" : "Pennsylvania Ave NW",
+			"country" : "USA",
+			"zip" : "205000",
+			"city" : "Washington",
+			"state" : "NW",
+			"isShippingAddressperAdd" : "48 naganahali dehennai kuthunar post bangalore",
+			"isShippingAddresscountryOne" : "India",
+			"isShippingAddressperZipTwo" : "560077",
+			"isShippingAddresscityTwo" : "bangalore",
+			"isShippingAddressstateTwo" : "Kerala"
+		},
+		"truetest": {
+			"username" : "johnpauul",
+			"password" : "Pinto@81234",
+			"firstName" : "Paul",
+			"lastname" : "Pinto",
+			"day" : "26",
+			"month" : "June",
+			"year" : "1996",
+			"email" : "johnpaul.pp33@gmail.com",
+			"countrycode" : "+91",
+			"areacode" : "4545",
+			"number" : "9456135120",
+			"perAddOne" : "48 naganahali dehennai kuthunar post bangalore",
+			"country" : "India",
+			"zip" : "560077",
+			"city" : "bangalore",
+			"state" : "Karnataka",
+			"isShippingAddressperAdd" : "48 naganahali dehennai kuthunar post bangalore",
+			"isShippingAddresscountryOne" : "India",
+			"isShippingAddressperZipTwo" : "560077",
+			"isShippingAddresscityTwo" : "bangalore",
+			"isShippingAddressstateTwo" : "Kerala"
+		}
+  }
+}

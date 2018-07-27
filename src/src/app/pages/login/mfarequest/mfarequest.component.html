@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<title>ZervPlatform</title>
+
+<body>
+	<div class="container-fluid">
+		<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 pad_top_birth col-sm-offset-3 border_cus_login" style="margin-top:5%;">
+			<div class="col-sm-10 col-sm-offset-1">
+				<h3>We don't recognize this computer </h3>
+			</div>
+			<div class="col-sm-10 col-sm-offset-1 pad_top">
+				<h5>This might have happened because you are using a new device or you cleared your cookies. For your security we need to
+					confirm your identity. Please, click "Next" to receive a temporary identification code </h5>
+			</div>
+			<div class="form-group col-xs-12 col-sm-10 col-sm-offset-1 pad_top_birth nolrpad">
+				<div class="form-group col-xs-6 col-sm-3">
+					<a type="button" style="width:100%" id="mfaRequestCancel" class="btn btn-default btn-md center-block" href="{{hostname}}#/login">Cancel</a>
+				</div>
+				<div class="form-group col-xs-6 col-sm-3 col-sm-offset-6">
+					<input type="submit" style="width:100%" id="mfaRequestNext" class="btn btn-info btn-md center-block" value="Next" routerLink="/mFAChooseMethod">
+				</div>
+			</div>
+		</div>
+	</div>
+</body>

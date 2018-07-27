@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<title>ZervPlatform</title>
+
+<body>
+	<form [formGroup]="mfaEnterPhoneText">
+		<div class="container-fluid">
+			<div class="form-group col-xs-12 col-sm-6 col-md-6 col-lg-6 col-sm-offset-3 border_cus_login">
+				<div class="form-group col-sm-10 col-sm-offset-1 pad_top_birth">
+					<div class="col-sm-12">
+						<h3>We sent a text message to +1 (123) 456 7890</h3>
+					</div>
+					<div class="col-sm-12 pad_top2">
+						<h5>Your temporary code is on its way. Once you receive it, you have 2 minutes to input it along with your password</h5>
+					</div>
+				</div>
+				<div class=" form-group col-sm-10 col-sm-offset-1">
+					<div class=" form-group col-sm-12 pad_top2">
+						<div class="col-sm-5">
+							<label>Temporary identification code</label>
+						</div>
+						<div class="col-sm-6 col-xs-10">
+							<input class="form-control" type="text" id="mfTextCode" name="code" formControlName="code">
+							<div *ngIf="mfaEnterPhoneText.get('code').touched || mfaEnterPhoneText.get('code').dirty" class="err_style">
+								<div *ngIf="mfaEnterPhoneText.hasError('required',['code'])">Code cannot be blank</div>
+							</div>
+							<div *ngIf="mfaEnterPhoneText.get('code').touched || mfaEnterPhoneText.get('code').dirty" class="err_style">
+								<div *ngIf="mfaEnterPhoneText.hasError('pattern',['code'])">Code should be numeric</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<div class="col-sm-5">
+							<label class="pad_top2">Password</label>
+						</div>
+						<div class="col-sm-6 col-xs-10">
+							<div class="form-group">
+								<input type="password" name="pass" class="form-control" id="passMfPhText" [type]="hidePassword ? 'password' : 'text'" class="form-control"
+								 formControlName="pass">
+								<div *ngIf="mfaEnterPhoneText.get('pass').touched || mfaEnterPhoneText.get('pass').dirty" class="err_style">
+									<div *ngIf="mfaEnterPhoneText.hasError('required',['pass'])">Code cannot be blank</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<i (click)="passwordVisibility()" id="clickEye" class="{{ hidePasswordIcon }} f16 img-responsive center-block" style="cursor:pointer;"
+							 aria-hidden="true"></i>
+						</div>
+					</div>
+					<div class="form-group col-sm-12 col-xs-11 pad_top70">
+						<div class="col-sm-12">
+							<h5>If your code didn't arrive within 2 minutes, please
+								<a>request a new code</a>.</h5>
+						</div>
+					</div>
+					<div class="form-group col-xs-12 col-sm-12 nolrpad pad_top_birth">
+						<div class="form-group col-xs-6 col-sm-3">
+							<a type="button" style="width:100%" class="btn btn-default btn-md center-block">Cancel</a>
+						</div>
+						<div class="form-group col-xs-6 col-sm-3 col-sm-offset-6">
+							<input type="submit" id="mfPhTextSend" style="width:100%" class="btn btn-info btn-md center-block" value="Send Code" [disabled]="mfaEnterPhoneText.invalid">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>

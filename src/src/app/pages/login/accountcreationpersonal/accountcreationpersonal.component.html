@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<title>Redemption</title>
+
+<body>
+	<div class="container-fluid text-center ">
+		<div class="form-group col-xs-12 col-sm-12">
+			<div class="from-group col-xs-12 col-sm-10 col-sm-offset-1">
+				<ol class="progress1 progress1--large">
+					<li class="is-active" data-step="1">
+						Personal information
+					</li>
+					<li class="" data-step="2">
+						Wallet
+					</li>
+					<li class="" data-step="3">
+						Overview
+					</li>
+				</ol>
+			</div>
+		</div>
+		<div class="form-group text-left">
+			<div class="col-sm-10 col-sm-offset-1 border_cus ">
+				<div class="form-group text-center col-xs-12 margin_top_pro col-sm-10 col-sm-offset-1">
+					<label class="f20">
+						<strong>Personal Information</strong>
+					</label>
+				</div>
+				<div class="col-sm-12 " style="text-align: right">
+					<label class="text-center normal-font-weight">
+						(
+						<i class="fa fa-asterisk f10 normal-font-weight"></i>) Mandatory fields
+					</label>
+				</div>
+				<form [formGroup]="accountCreationPersonal">
+					<div class="form-group form-horizontal  col-xs-12 col-sm-7 col-sm-offset-2   marg_left">
+						
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">First name*</label>
+								</div>
+								<div class="col-sm-8">
+									<input class="form-control" id="perFirName" formControlName="firstName" type="text" name="firstName">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('firstName').dirty || accountCreationPersonal.get('firstName').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['firstName'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('firstName').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['firstName'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('firstName').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('maxlength',['firstName'])">The maximum accepted length is 30 characters</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Last name*</label>
+								</div>
+								<div class="col-sm-8">
+									<input class="form-control" formControlName="lastName" id="perLasName" type="text" name="lastName">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('lastName').dirty || accountCreationPersonal.get('lastName').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['lastName'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('lastName').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['lastName'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('lastName').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('maxlength',['lastName'])">The maximum accepted length is 30 characters</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Date of birth*</label>
+								</div>
+								<div class="col-sm-8">
+									<div class="col-sm-12 input-group">
+										<input class="form-control" style="float:none" placeholder="Select a date" ngx-mydatepicker name="dob" formControlName="dob"
+										 id="dob" [options]="myOptions" #dp="ngx-mydatepicker" />
+
+										<span class="input-group-btn">
+
+											<button type="button" class="btn btn-default" (click)="dp.toggleCalendar()">
+												<i class="glyphicon glyphicon-calendar"></i>
+											</button>
+										</span>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Email*</label>
+								</div>
+								<div class="col-sm-8">
+									<input class="form-control" formControlName="emailAddress" id="perEmail" type="email" name="emailAddress" readonly>
+									<div *ngIf="accountCreationPersonal.get('emailAddress').touched || accountCreationPersonal.get('emailAddress').dirty" class="err_style">
+										<div *ngIf="accountCreationPersonal.hasError('required',['emailAddress'])" class="padd">Cannot be blank</div>
+									</div>
+									<div *ngIf="accountCreationPersonal.get('emailAddress').touched || accountCreationPersonal.get('emailAddress').dirty" class="err_style">
+										<div *ngIf="accountCreationPersonal.hasError('pattern',['emailAddress'])">Invalid E-mail ID</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res pad_res ">
+									<label class="control-label normal-font-weight">Phone number*</label>
+								</div>
+								<div class="col-sm-3">
+									<label class="normal-font-weight">Country code</label>
+									<select class="form-control" formControlName="countryCode" id="percounCode" name="countryCode" readonly>
+										<option>+91</option>
+										<option>+91</option>
+										<option>3</option>
+										<option>4</option>
+									</select>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('countryCode').dirty || accountCreationPersonal.get('countryCode').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['countryCode'])">Cannot be blank
+										</div>
+									</div>
+								</div>
+
+								<div class="col-sm-5">
+									<label class="normal-font-weight">Phone number</label>
+									<input class="form-control" formControlName="phoneNumber" id="perPhNumber" name="phoneNumber" type="text" readonly>
+									<div *ngIf="accountCreationPersonal.get('phoneNumber').touched || accountCreationPersonal.get('phoneNumber').dirty" class="err_style">
+										<div *ngIf="accountCreationPersonal.hasError('required',['phoneNumber'])" class="padd">Cannot be blank</div>
+									</div>
+									<div *ngIf="accountCreationPersonal.get('phoneNumber').touched || accountCreationPersonal.get('phoneNumber').dirty" class="err_style">
+										<div *ngIf="accountCreationPersonal.hasError('pattern',['phoneNumber'])">Invalid Number</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Address line 1*</label>
+								</div>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" formControlName="addressOne" id="perAddOne" name="addressOne">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('addressOne').dirty || accountCreationPersonal.get('addressOne').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['addressOne'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('addressOne').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['addressOne'])">Address description is too short</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('addressOne').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('maxlength',['addressOne'])">Address description is too long</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Address line 2</label>
+								</div>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" formControlName="addressTwo" id="perAddTwo" name="addressTwo">
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Country*</label>
+								</div>
+								<div class="col-sm-8">
+									<select #t (change)="countrySelect(t.value)" class="form-control" id="country" formControlName="country" name="country">
+										<option value="">Select Country</option>
+										<option *ngFor="let item of countries; let i = index" value="{{ i }}">{{ item }}</option>
+									</select>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('country').dirty || accountCreationPersonal.get('country').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['country'])">Country is required
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="normal-font-weight">City</label>
+								</div>
+								<div class="col-sm-8">
+									<input class="form-control" formControlName="city" name="city" id="perCity" type="text">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('city').dirty || accountCreationPersonal.get('city').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['city'])">Cannot be blank
+										</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('city').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['city'])">City name is too short</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('city').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('maxlength',['city'])">City name is too long</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 ">
+							<div class="col-sm-8 col-sm-offset-3">
+
+								<div class="col-sm-7 paddingLeft5">
+									<label class="normal-font-weight">State*</label>
+									<select class="form-control" formControlName="state" id="perState">
+										<option value="">Select State</option>
+										<option *ngFor="let item of states; let i = index" value="{{ i }}">{{ item }}</option>
+									</select>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('state').dirty || accountCreationPersonal.get('state').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['state'])">State is required
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<label class="normal-font-weight">Zip code*</label>
+									<input class="form-control" formControlName="zipCode" maxlength="5" name="zipCode" id="perZip" type="text">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('zipCode').dirty || accountCreationPersonal.get('zipCode').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['zipCode'])">Cannot be blank</div>
+									</div>
+									<div *ngIf="accountCreationPersonal.get('zipCode').touched || accountCreationPersonal.get('zipCode').dirty" class="err_style">
+										<div *ngIf="accountCreationPersonal.hasError('pattern',['zipCode'])">Invalid Number</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('zipCode').dirty || accountCreationPersonal.get('zipCode').touched">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['zipCode'])">Zip code should be 5 digits</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="form-group col-sm-12 col-xs-12">
+							<div class="col-sm-7 col-sm-offset-3 paddingLeft5">
+								<div class="col-sm-12 pad_top">
+									<label class="normal-font-weight">Is this address also your shipping address?</label>
+								</div>
+								<div class="col-sm-4">
+									<input formControlName="isShippingAddress" name="isShippingAddress" id="perYes" type="radio" (change)="addressHide()" value="Yes">Yes
+								</div>
+								<div class="col-sm-4">
+									<input formControlName="isShippingAddress" name="isShippingAddress" id="perNo" type="radio" (change)="addressShow('firstload')"
+									 value="No">No
+								</div>
+							</div>
+						</div>
+						<div class="form-group text-center col-xs-12 col-sm-12 " *ngIf="shippingAdd">
+							<hr>
+							<h4>
+								<b>Shipping Address</b>
+							</h4>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 " *ngIf="shippingAdd">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Address line 1*</label>
+								</div>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" formControlName="sAddressOne" id="perAdd" name="sAddressOne">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('sAddressOne').dirty || accountCreationPersonal.get('sAddressOne').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['sAddressOne'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('sAddressOne').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['sAddressOne'])">Address description is too short</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('sAddressOne').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('maxlength',['sAddressOne'])">Address description is too long</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12 " *ngIf="shippingAdd">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Address line 2</label>
+								</div>
+								<div class="col-sm-8">
+									<input type="text" class="form-control" formControlName="sAddressTwo" id="perAddThree" name="sAddressTwo">
+								</div>
+							</div>
+						</div>
+						<div class="form-group  col-xs-12 col-sm-12" *ngIf="shippingAdd">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="control-label normal-font-weight">Country*</label>
+								</div>
+								<div class="col-sm-8">
+									<select #t (change)="countrySelectTwo(t.value)" class="form-control" id="countryTwo" formControlName="countryTwo" name="countryTwo">
+										<option value="">Select Country</option>
+										<option *ngFor="let item of countriesTwo; let i = index" value="{{ i }}">{{ item }}</option>
+									</select>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('countryTwo').dirty || accountCreationPersonal.get('countryTwo').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['countryTwo'])">Country is required
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group  col-xs-12 col-sm-12 " *ngIf="shippingAdd">
+							<div class="col-sm-12">
+								<div class="col-sm-3 text_res">
+									<label class="normal-font-weight">City*</label>
+								</div>
+								<div class="col-sm-8">
+									<input class="form-control" formControlName="cityTwo" id="cityTwo" name="cityTwo" type="text">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('cityTwo').dirty || accountCreationPersonal.get('cityTwo').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['cityTwo'])">Cannot be blank
+										</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('cityTwo').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['cityTwo'])">City name is too short</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('cityTwo').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('maxlength',['cityTwo'])">City name is too long</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="form-group  col-xs-12 col-sm-12" *ngIf="shippingAdd">
+							<div class="col-sm-8 col-sm-offset-3">
+
+								<div class="col-sm-7 paddingLeft5" *ngIf="shippingAdd">
+									<label class="normal-font-weight">State*</label>
+									<select class="form-control" formControlName="stateTwo" id="stateTwo">
+										<option value="">Select State</option>
+										<option *ngFor="let item of statesTwo; let i = index" value="{{ i }}">{{ item }}</option>
+									</select>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('stateTwo').dirty || accountCreationPersonal.get('stateTwo').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['stateTwo'])">State is required
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-5">
+									<label class="normal-font-weight">Zip code*</label>
+									<input class="form-control" formControlName="zipCodeTwo" id="perZipTwo" maxlength="5" name="zipCodeTwo" type="text">
+									<div class="err_style" *ngIf="accountCreationPersonal.get('zipCodeTwo').dirty || accountCreationPersonal.get('zipCodeTwo').touched">
+										<div *ngIf="accountCreationPersonal.hasError('required',['zipCodeTwo'])">Cannot be blank</div>
+									</div>
+									<div class="err_style" *ngIf="accountCreationPersonal.get('zipCodeTwo').dirty">
+										<div *ngIf="accountCreationPersonal.hasError('minlength',['zipCodeTwo'])">Zip code should be 5 digits</div>
+									</div>
+									<div *ngIf="accountCreationPersonal.get('zipCodeTwo').touched || accountCreationPersonal.get('zipCodeTwo').dirty" class="err_style">
+										<div *ngIf="accountCreationPersonal.hasError('pattern',['zipCodeTwo'])">Invalid Number</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class=" form-group col-xs-12 col-sm-12 ">
+							<br/>
+							<div class="col-sm-3 col-xs-6">
+								<a id="perBack" style="text-decoration:none;" class="btn btn-default btn-md center-block" (click)="back()">Back</a>
+							</div>
+							<div class="col-sm-3 col-xs-6 col-sm-offset-6">
+								<input style="text-decoration:none;" type="submit" id="perNext" class="btn btn-info btn-md btn-block" [disabled]="accountCreationPersonal.invalid"
+								 (click)="save()" value="Next" />
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>

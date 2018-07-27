@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<title>ZervPlatform</title>
+
+<body>
+	<form [formGroup]="accountLogin" (ngSubmit)="login()">
+		<div class="container-fluid text-center ">
+			<div class="form-group text-left">
+				<div class="col-sm-12">
+					<div class="form-group col-xs-12 col-sm-12" style="margin-top:8%;">
+						<div class="form-group col-xs-12 f14 col-sm-8 col-sm-offset-2">
+
+							<div class="col-sm-6 col-xs-12 col-sm-offset-3 border_cus_login">
+								<div class="form-group margin_cus_login text-center  col-xs-12 col-sm-12">
+									<h4>
+										<strong>Access your account to explore the redemption portal</strong>
+									</h4>
+								</div>
+								<div class="col-sm-12 input-group">
+									<div class="input-group col-sm-12">
+										<div class="col-sm-12">
+											<div class="col-sm-10 form-group col-xs-10 col-sm-offset-1">
+												<div class="input-group  col-xs-12  col-sm-12">
+													<span class="input-group-addon">
+														<i class="fa fa-user"></i>
+													</span>
+													<input id="eml" type="text" formControlName="username" class="form-control" placeholder="Username">
+												</div>
+												<div *ngIf="accountLogin.get('username').touched || accountLogin.get('username').dirty">
+													<div class="err_style" *ngIf="accountLogin.hasError('required',['username'])">Cannot be blank</div>
+												</div>
+												<div *ngIf="accountLogin.get('username').touched || accountLogin.get('username').dirty">
+													<div class="err_style" *ngIf="accountLogin.hasError('pattern',['username'])">Invalid username</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="col-sm-12 input-group">
+									<div class="input-group col-sm-12">
+										<div class="col-sm-12 for">
+											<div class="col-sm-10 form-group col-xs-10 col-sm-offset-1">
+												<div class="input-group  col-xs-12 col-sm-12">
+													<span class="input-group-addon">
+														<a class="fa fa-lock"></a>
+													</span>
+													<input type="password" [type]="hidePassword ? 'password' : 'text'" placeholder="password" id="passdLogin" formControlName="password"
+													 class="form-control" />
+												</div>
+												<div *ngIf="accountLogin.get('password').touched || accountLogin.get('password').dirty">
+													<div class="err_style" *ngIf="accountLogin.hasError('required',['password'])">Password is required
+													</div>
+												</div>
+												<div *ngIf="accountLogin.get('password').touched || accountLogin.get('password').dirty" class="err_style">
+													<div *ngIf="accountLogin.hasError('pattern',['password'])">Invalid password</div>
+												</div>
+											</div>
+											<div class="form-group img_icon_center col-xs-1">
+												<i id="clickEye" (click)="passwordVisibility()" class="{{ hidePasswordIcon }} f16 cusr_pointer" aria-hidden="true"></i>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="form-group col-xs-12 col-sm-10 col-sm-offset-1">
+									<div class=" form-group text-center col-sm-6 col-xs-12">
+										<label class="checkbox-inline">
+											<input id="loginRemember" formControlName="rememberMe" class="cus_checkbox_size" type="checkbox" (change)="remember()">Remember me.
+										</label>
+									</div>
+									<div class=" form-group text-center col-sm-6 col-xs-12">
+										<a id="loginForget" routerLink="/forgotPassword">Forgot password?</a>
+									</div>
+								</div>
+								<div class="text-center err_style">{{ loginMessage }}
+								</div>
+								<div class=" form-group col-xs-6 col-xs-offset-3 col-sm-6 col-sm-offset-3">
+									<input type="submit" class="btn btn-info btn-block btn-md center-block" [disabled]="accountLogin.invalid" id="accountLogin"
+									 value="LOGIN">
+								</div>
+								<div class="form-group text-center marbtm5 col-xs-12 col-sm-10 col-sm-offset-1">
+									<label>Having trouble logging in.
+										<a routerLink="/help" id="loginHelp"> Click here</a> for help
+									</label>
+								</div>
+								<div class="form-group text-center marbtm10 col-xs-12 col-sm-12">
+									<a id="loginCreate" href="{{hostname}}/accountcreationpersonal">CREATE ACCOUNT</a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</form>
+</body>

@@ -1,0 +1,63 @@
+// @import 'nativescript-theme-core/css/core.light.css';
+
+.pw {
+    border-width: 1;
+    border-color: #000000;
+    padding: 5;
+    margin: 5;
+}
+
+// .pw-none { }
+
+.pw-weak {
+    background-color: red;
+}
+
+.pw-medium {
+    background-color: orange;
+}
+
+.pw-strong {
+    background-color: green;
+}
+
+// password strength
+.passwordNone{
+    width:0%;
+    background-color:red;
+}
+.passwordWeak{
+    width:20%;
+    background-color:red;
+}
+.passwordMedium{
+    width:60%;
+    background-color: orange;
+}
+.passwordStrong{
+    width:100%;
+    background-color:green;
+}
+
+.matchedStyle{
+    border:1px solid rgb(139, 212, 29);
+    
+}
+.unMatchedStyle{
+    border:1px solid red;
+    
+}
+.none{
+    border:rgb(212, 205, 205);
+}
+.matchedStyle1{
+    border:1px solid rgb(139, 212, 29);
+    
+}
+.unMatchedStyle1{
+    border:1px solid red;
+    
+}
+.none{
+    border:rgb(212, 205, 205);
+}

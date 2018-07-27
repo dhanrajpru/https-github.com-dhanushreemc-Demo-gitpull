@@ -1,0 +1,46 @@
+<div class="container-fluid text-center ">
+	<div class="form-group col-sm-12">
+		<div class="from-group col-sm-8 col-sm-offset-2">
+			<ol class="progress1 progress1--large">
+				<li class="is-complete" data-step="1">
+					Personal information
+				</li>
+				<li class="is-active" data-step="2">
+					Wallet
+				</li>
+				<li class="" data-step="3">
+					Overview
+				</li>
+			</ol>
+		</div>
+	</div>
+	<div class="form-group text-left">
+		<div class="col-sm-10 col-sm-offset-1 border_cus marbtmten">
+			<div class="form-group text-left col-xs-12 margin_top_pro col-sm-9 col-sm-offset-1">
+				<label class="f20">
+					<strong>Wallet</strong>
+				</label>
+			</div>
+			<form [formGroup]="rdwalletaddress" (ngSubmit)="save()">
+				<div class="form-group  col-xs-12 col-sm-8 col-sm-offset-2 marbtmten_wal">
+					<div class="col-sm-9">
+						<label>Please enter your ZERV public key address*</label>
+						<input class="form-control" formControlName="address" id="zervAddress" type="text">
+						<div *ngIf="rdwalletaddress.get('address').touched">
+							<div class="err_style" *ngIf="rdwalletaddress.hasError('required',['address'])">Wallet address cannot be blank
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class=" form-group col-xs-12 col-sm-12 marbtmten">
+					<div class="col-sm-3 col-xs-6">
+						<a class="btn btn-default btn-block" (click)="back()" id="walletBack">Back</a>
+					</div>
+					<div class="col-sm-3 col-xs-6 col-sm-offset-6">
+						<input type="submit" style="text-decoration:none;" id="walletCreateAccount" class="btn btn-info btn-md btn-block" [disabled]="rdwalletaddress.invalid" value="Next">
+					</div>
+				</div>
+			</form>
+		</div>
+	</div>
+</div>
