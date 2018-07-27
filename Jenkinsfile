@@ -27,14 +27,14 @@ pipeline {
 
         stage("Launch service"){
             steps {
-                sh "docker run -d -p 4045:4045 --name redemui redemui"
+                sh "docker run -d -p 4011:4011 --name redemui redemui"
                 sh "docker logs redemui"
             }
         }
 
         stage("Launch Info"){
             steps {
-                echo "http://${ip}:4045"
+                echo "http://${ip}:4011"
             }
         }
     }
